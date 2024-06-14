@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-lora-tuner"
+description = "Nodes: LoRA-Tuner. For using multiple LoRA easily."
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/AonekoSS/ComfyUI-LoRA-Tuner"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-LoRA-Tuner"
+Icon = ""
