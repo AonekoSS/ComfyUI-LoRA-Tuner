@@ -9,6 +9,6 @@ Repository = "https://github.com/AonekoSS/ComfyUI-LoRA-Tuner"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = "AonekoSS"
+PublisherId = "aonekoss"
 DisplayName = "ComfyUI-LoRA-Tuner"
 Icon = ""
