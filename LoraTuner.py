@@ -9,7 +9,7 @@ class LoraTuner:
 
     @classmethod
     def INPUT_TYPES(cls):
-        args = { "model": ("MODEL",)}
+        args = { "model": ("MODEL",), "clip": ("CLIP",) }
         arg_lora_name = ([""] + get_filename_list("loras"),)
         arg_strength = ("FLOAT", {"default": 1.0, "min": -2.0, "max": 2.0, "step": 0.1, "display": "slider"})
         for i in range(LORA_COUNT):
@@ -17,14 +17,14 @@ class LoraTuner:
             args["{}:".format(i)] = arg_strength
         return {"required": args}
 
-    def apply(self, model, **kwargs):
+    def apply(self, model, clip, **kwargs):
         for i in range(LORA_COUNT):
             lora_name = kwargs["{}:lora".format(i)]
             strength = kwargs["{}:".format(i)]
             if lora_name != "" and strength != 0:
-                model = self.loras[i].load_lora(model, None, lora_name, strength, 0)[0]
-        return (model,)
+                (model, clip) = self.loras[i].load_lora(model, clip, lora_name, strength, strength)
+        return (model, clip)
 
-    RETURN_TYPES = ("MODEL",)
+    RETURN_TYPES = ("MODEL", "CLIP")
     FUNCTION = "apply"
     CATEGORY = "utils"

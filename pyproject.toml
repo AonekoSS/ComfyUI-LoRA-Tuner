@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-lora-tuner"
 description = "For using multiple LoRA easily."
-version = "1.0.0"
+version = "1.1.0"
 license = { file = "LICENSE" }
 
 [project.urls]
